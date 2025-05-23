@@ -17,7 +17,7 @@ namespace PryPistolia_IEF
             InitializeComponent();
         }
 
-        private void FormPrincipal_Load(object sender, EventArgs e)
+        private void FormLogin_Load(object sender, EventArgs e)
         {
             lblUser.Text = "User";
             lblPass.Text = "Pass";
@@ -28,7 +28,8 @@ namespace PryPistolia_IEF
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            if (txtUser.Text == "" && txtPass.Text == "")
+            
+            if (txtUser.Text == "" || txtPass.Text == "")
             {
                 FormPrincipal formPrincipal = new FormPrincipal();
                 this.Hide();

@@ -25,7 +25,8 @@ namespace PryPistolia_IEF
 
         private void auditoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormAuditoria.Show
+            FormAuditoria formAuditoria = new FormAuditoria();
+            formAuditoria.Show();
         }
     }
 }
