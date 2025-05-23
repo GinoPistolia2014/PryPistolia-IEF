@@ -25,5 +25,21 @@ namespace PryPistolia_IEF
             btnIniciar.Enabled = false;
 
         }
+
+        private void btnIniciar_Click(object sender, EventArgs e)
+        {
+            if (txtUser.Text == "" && txtPass.Text == "")
+            {
+                FormPrincipal formPrincipal = new FormPrincipal();
+                this.Hide();
+                formPrincipal.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Datos incorrectos.");
+            }
+        }
+        
     }
 }
