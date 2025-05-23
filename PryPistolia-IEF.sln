@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PryPistolia-IEF", "PryPistolia-IEF\PryPistolia-IEF.csproj", "{F8B83E6B-AB55-482C-BD82-9936599AE90B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PryPistolia-IEFI", "PryPistolia-IEF\PryPistolia-IEFI.csproj", "{F8B83E6B-AB55-482C-BD82-9936599AE90B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

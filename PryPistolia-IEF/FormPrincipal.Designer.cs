@@ -3,14 +3,14 @@
     partial class FormPrincipal
     {
         /// <summary>
-        /// Variable del diseñador necesaria.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Limpiar los recursos que se estén usando.
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,74 +20,64 @@
             base.Dispose(disposing);
         }
 
-        #region Código generado por el Diseñador de Windows Forms
+        #region Windows Form Designer generated code
 
         /// <summary>
-        /// Método necesario para admitir el Diseñador. No se puede modificar
-        /// el contenido de este método con el editor de código.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblUser = new System.Windows.Forms.Label();
-            this.lblPass = new System.Windows.Forms.Label();
-            this.txtUser = new System.Windows.Forms.TextBox();
-            this.txtPass = new System.Windows.Forms.TextBox();
-            this.btnIniciar = new System.Windows.Forms.Button();
+            this.mstareas = new System.Windows.Forms.MenuStrip();
+            this.tareasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administradorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.mstareas.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblUser
+            // mstareas
             // 
-            this.lblUser.AutoSize = true;
-            this.lblUser.Location = new System.Drawing.Point(77, 73);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(29, 13);
-            this.lblUser.TabIndex = 0;
-            this.lblUser.Text = "User";
+            this.mstareas.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tareasToolStripMenuItem,
+            this.administradorToolStripMenuItem});
+            this.mstareas.Location = new System.Drawing.Point(0, 0);
+            this.mstareas.Name = "mstareas";
+            this.mstareas.Size = new System.Drawing.Size(800, 24);
+            this.mstareas.TabIndex = 0;
+            this.mstareas.Text = "Tareas";
             // 
-            // lblPass
+            // tareasToolStripMenuItem
             // 
-            this.lblPass.AutoSize = true;
-            this.lblPass.Location = new System.Drawing.Point(77, 166);
-            this.lblPass.Name = "lblPass";
-            this.lblPass.Size = new System.Drawing.Size(30, 13);
-            this.lblPass.TabIndex = 1;
-            this.lblPass.Text = "Pass";
+            this.tareasToolStripMenuItem.Name = "tareasToolStripMenuItem";
+            this.tareasToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.tareasToolStripMenuItem.Text = "Tareas";
             // 
-            // txtUser
+            // administradorToolStripMenuItem
             // 
-            this.txtUser.Location = new System.Drawing.Point(190, 70);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(100, 20);
-            this.txtUser.TabIndex = 2;
+            this.administradorToolStripMenuItem.Name = "administradorToolStripMenuItem";
+            this.administradorToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
+            this.administradorToolStripMenuItem.Text = "Administrador";
             // 
-            // txtPass
+            // statusStrip1
             // 
-            this.txtPass.Location = new System.Drawing.Point(190, 159);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(100, 20);
-            this.txtPass.TabIndex = 3;
-            // 
-            // btnIniciar
-            // 
-            this.btnIniciar.Location = new System.Drawing.Point(566, 336);
-            this.btnIniciar.Name = "btnIniciar";
-            this.btnIniciar.Size = new System.Drawing.Size(118, 50);
-            this.btnIniciar.TabIndex = 4;
-            this.btnIniciar.Text = "Iniciar";
-            this.btnIniciar.UseVisualStyleBackColor = true;
+            this.statusStrip1.Location = new System.Drawing.Point(0, 428);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnIniciar);
-            this.Controls.Add(this.txtPass);
-            this.Controls.Add(this.txtUser);
-            this.Controls.Add(this.lblPass);
-            this.Controls.Add(this.lblUser);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.mstareas);
+            this.MainMenuStrip = this.mstareas;
             this.Name = "FormPrincipal";
-            this.Text = "Login";
+            this.Text = "FormPrincipal";
+            this.mstareas.ResumeLayout(false);
+            this.mstareas.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -95,11 +85,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblUser;
-        private System.Windows.Forms.Label lblPass;
-        private System.Windows.Forms.TextBox txtUser;
-        private System.Windows.Forms.TextBox txtPass;
-        private System.Windows.Forms.Button btnIniciar;
+        private System.Windows.Forms.MenuStrip mstareas;
+        private System.Windows.Forms.ToolStripMenuItem tareasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem administradorToolStripMenuItem;
+        private System.Windows.Forms.StatusStrip statusStrip1;
     }
 }
-

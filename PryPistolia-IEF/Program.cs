@@ -16,7 +16,7 @@ namespace PryPistolia_IEF
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormPrincipal());
+            Application.Run(new FormLogin());
         }
     }
 }
