@@ -10,20 +10,20 @@ namespace PryPistolia_IEF
     {
         internal class Usuario
         {
-            private readonly string cadenaConexion = "Server=localhost\\SQLEXPRESS01;Database=master;Trusted_Connection=True;";
+            private readonly string cadenaConexion = "Server=localhost\\SQLEXPRESS01;Database=Usuario;Trusted_Connection=True;";
             public string EstadoConexion { get; private set; }
 
-            public bool ValidarUsuario(string login, string contraseña)
+            public bool ValidarUsuario(string User, string Pass)
             {
-                const string sql = "SELECT COUNT(*) FROM Usuarios WHERE Login = @login AND Contraseña = @clave";
+                const string sql = "SELECT COUNT(*) FROM Usuarios WHERE Usuario = @User AND Pass = @Pass";
 
                 try
                 {
                     using (var conexion = new SqlConnection(cadenaConexion))
                     using (var comando = new SqlCommand(sql, conexion))
                     {
-                        comando.Parameters.AddWithValue("@login", login);
-                        comando.Parameters.AddWithValue("@clave", contraseña);
+                        comando.Parameters.AddWithValue("@User", User);
+                        comando.Parameters.AddWithValue("@Pass", Pass);
 
                         conexion.Open();
                         int cantidad = (int)comando.ExecuteScalar();
@@ -38,7 +38,7 @@ namespace PryPistolia_IEF
                 }
             }
 
-            public bool RegistrarUsuario(string login, string nombre, string apellido, string descripcion, string clave)
+            public bool RegistrarUsuario(string User, string nombre, string apellido, string descripcion)
             {
                 const string sql = @"
             INSERT INTO Usuarios (Login, Nombre, Apellido, Descripcion, FechaRegistro, TiempoUsoMinutos, Contraseña)
@@ -49,11 +49,11 @@ namespace PryPistolia_IEF
                     using (var conexion = new SqlConnection(cadenaConexion))
                     using (var comando = new SqlCommand(sql, conexion))
                     {
-                        comando.Parameters.AddWithValue("@login", login);
+                        comando.Parameters.AddWithValue("@login", User);
                         comando.Parameters.AddWithValue("@nombre", nombre);
                         comando.Parameters.AddWithValue("@apellido", apellido);
                         comando.Parameters.AddWithValue("@desc", descripcion);
-                        comando.Parameters.AddWithValue("@clave", clave);
+
 
                         conexion.Open();
                         comando.ExecuteNonQuery();
@@ -68,16 +68,16 @@ namespace PryPistolia_IEF
                 }
             }
 
-            public void RegistrarLogInicioSesion(string login)
+            public void RegistrarLogInicioSesion(string User)
             {
-                const string sql = "INSERT INTO Auditoria (Login, FechaHoraInicio) VALUES (@login, GETDATE())";
+                const string sql = "INSERT INTO Auditoria (User, FechaHoraInicio) VALUES (@User, GETDATE())";
 
                 try
                 {
                     using (var conexion = new SqlConnection(cadenaConexion))
                     using (var comando = new SqlCommand(sql, conexion))
                     {
-                        comando.Parameters.AddWithValue("@login", login);
+                        comando.Parameters.AddWithValue("@User", User);
                         conexion.Open();
                         comando.ExecuteNonQuery();
                     }
