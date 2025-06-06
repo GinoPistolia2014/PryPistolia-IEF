@@ -27,6 +27,42 @@ namespace PryPistolia_IEF
         {
             FormAuditoria formAuditoria = new FormAuditoria();
             formAuditoria.Show();
+        } 
+
+namespace MiAplicacion
+    {
+        public class FormPrincipal : Form
+        {
+            private MenuStrip menuStrip;
+
+            public FormPrincipal()
+            {
+                InitializeComponent();
+            }
+
+            private void InitializeComponent()
+            {
+                // Crear el MenuStrip
+                this.menuStrip = new MenuStrip();
+
+                // Crear las opciones del menú
+                var usuarioMenuItem = new ToolStripMenuItem("Usuario");
+                var auditoriaMenuItem = new ToolStripMenuItem("Auditoria");
+
+                // Agregar las opciones al MenuStrip
+                this.menuStrip.Items.Add(usuarioMenuItem);
+                this.menuStrip.Items.Add(auditoriaMenuItem);
+
+                // Agregar el MenuStrip al formulario
+                this.Controls.Add(this.menuStrip);
+
+                // Configurar el formulario
+                this.MainMenuStrip = this.menuStrip;
+                this.Text = "Formulario con MenuStrip";
+                this.StartPosition = FormStartPosition.CenterScreen;
+                this.Width = 400;
+                this.Height = 300;
+            }
         }
     }
 }

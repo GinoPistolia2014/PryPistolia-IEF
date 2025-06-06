@@ -1,38 +1,42 @@
 ﻿using System;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System;
-using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace PryPistolia_IEF
 {
-    public class Conexion
+    internal class Conexion
     {
-        private string connectionString;
-
-        // Constructor que recibe la cadena de conexión
-        public Conexion()
+        public void Conectar(DataGridView dgv)
         {
-            // Reemplaza los valores con los datos de tu base de datos
-            connectionString = "Server=tu_servidor;Database=tu_base_de_datos;User Id=tu_usuario;Password=tu_contraseña;";
-        }
+            string connectionString = "Server=localhost\\SQLEXPRESS01;Database=master;Trusted_Connection=True;";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    dgv.Rows.Clear();
+                    connection.Open();
+                    MessageBox.Show("Datos guardados correctamente");
+                    string query = "SELECT * FROM Usuarios";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    dgv.DataSource = table;
 
-        // Método para obtener la conexión
-        public SqlConnection ObtenerConexion()
-        {
-            SqlConnection conexion = new SqlConnection(connectionString);
-            try
-            {
-                conexion.Open();
-                Console.WriteLine("Conexión exitosa.");
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Los datos presentan error" + ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error al conectar: " + ex.Message);
-            }
-            return conexion;
         }
     }
 }
+

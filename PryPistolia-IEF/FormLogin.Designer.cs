@@ -77,7 +77,7 @@
             this.btnIniciar.UseVisualStyleBackColor = true;
             this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
             // 
-            // FormLogin
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -87,7 +87,7 @@
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.lblPass);
             this.Controls.Add(this.lblUser);
-            this.Name = "FormLogin";
+            this.Name = "Login";
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();

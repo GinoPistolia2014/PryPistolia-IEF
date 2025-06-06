@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PryPistolia_IEF.MiAplicacion;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,6 +18,8 @@ namespace PryPistolia_IEF
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormLogin());
+            Application.EnableVisualStyles();
+            Application.Run(new FormPrincipal());
         }
     }
 }
