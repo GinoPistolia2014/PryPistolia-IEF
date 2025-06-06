@@ -13,7 +13,7 @@ namespace PryPistolia_IEF
     public partial class FormLogin : Form
     {
         private UsuarioRegistro Usuario;
-                public string connectionString = "Server = localhost\\SQLEXPRESS; Database = Gestion; Trusted_Connection = True";
+        public string connectionString = "Server = localhost\\SQLEXPRESS; Database = Gestion; Trusted_Connection = True";
             Conexion c = new Conexion();
         public FormLogin()
         {
@@ -42,7 +42,7 @@ namespace PryPistolia_IEF
             // Datos adicionales (puedes agregar TextBox para estos)
             string nombre = "Nuevo";
             string apellido = "Usuario";
-            string descripcion = "Registrado desde el sistema";
+            string descripcion = "";
 
             try
             {
@@ -53,7 +53,7 @@ namespace PryPistolia_IEF
                 }
                 else
                 {
-                    MessageBox.Show("Error al registrar: " + Usuario.estadoConexion, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Registro erroneo: " + Usuario.estadoConexion, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -75,10 +75,10 @@ namespace PryPistolia_IEF
 
             try
             {
-                bool loginExitoso = Usuario.ValidarLogin(login, password);
-                if (loginExitoso)
+                bool login = Usuario.ValidarLogin(login, password);
+                if (login)
                 {
-                    MessageBox.Show("Inicio de sesión exitoso", "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Inicio de sesión");
                     this.Hide();
 
                     // Pasar el login al formulario principal

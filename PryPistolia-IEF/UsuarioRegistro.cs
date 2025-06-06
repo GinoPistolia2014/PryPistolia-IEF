@@ -10,7 +10,7 @@ namespace PryPistolia_IEF
     {
         internal class Usuario
         {
-            private readonly string cadenaConexion = "Server=localhost\\SQLEXPRESS01;Database=Usuario;Trusted_Connection=True;";
+            private readonly string cadenaConexion = "Server=localhost\\SQLEXPRESS01;Database=Usuarios;Trusted_Connection=True;";
             public string EstadoConexion { get; private set; }
 
             public bool ValidarUsuario(string User, string Pass)
@@ -42,15 +42,14 @@ namespace PryPistolia_IEF
             {
                 const string sql = @"
             INSERT INTO Usuarios (Login, Nombre, Apellido, Descripcion, FechaRegistro, TiempoUsoMinutos, Contraseña)
-            VALUES (@login, @nombre, @apellido, @desc, GETDATE(), 0, @clave)";
+            VALUES (@login, @nombre, @apellido, @desc, GETDATE(),)";
 
                 try
                 {
                     using (var conexion = new SqlConnection(cadenaConexion))
                     using (var comando = new SqlCommand(sql, conexion))
                     {
-                        comando.Parameters.AddWithValue("@login", User);
-                        comando.Parameters.AddWithValue("@nombre", nombre);
+                        comando.Parameters.AddWithValue("@nombre", User);
                         comando.Parameters.AddWithValue("@apellido", apellido);
                         comando.Parameters.AddWithValue("@desc", descripcion);
 

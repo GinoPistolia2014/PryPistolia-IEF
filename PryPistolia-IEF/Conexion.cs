@@ -14,7 +14,7 @@ namespace PryPistolia_IEF
     {
         public void Conectar(DataGridView dgv)
         {
-            string connectionString = "Server=localhost\\SQLEXPRESS01;Database=master;Trusted_Connection=True;";
+            string connectionString = "Server=localhost\\SQLEXPRESS01;Database=Usuarios;Trusted_Connection=True;";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try

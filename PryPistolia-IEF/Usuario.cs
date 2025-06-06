@@ -15,7 +15,7 @@ namespace PryPistolia_IEF
         public DateTime FechaInicio { get; set; }
         public bool Completada { get; set; }
 
-        public Usuario(string Titulo, string Nombre, string Descripcion, string Prioridad, string Tarea, string Estado, DateTime FechaInicio)
+        public Usuario(string Titulo, string Nombre, string Descripcion, DateTime FechaInicio)
         {
 
             this.Titulo = Titulo;
