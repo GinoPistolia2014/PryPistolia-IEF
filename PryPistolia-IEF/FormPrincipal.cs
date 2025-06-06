@@ -9,27 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PryPistolia_IEF
-{
-    public partial class FormPrincipal : Form
-    {
-        FormAuditoria FormAuditoria = new FormAuditoria();
-        public FormPrincipal()
-        {
-            InitializeComponent();
-        }
 
-        private void FormPrincipal_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void auditoriaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormAuditoria formAuditoria = new FormAuditoria();
-            formAuditoria.Show();
-        } 
-
-namespace MiAplicacion
     {
         public class FormPrincipal : Form
         {
